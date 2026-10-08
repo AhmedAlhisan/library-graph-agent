@@ -1,0 +1,20 @@
+services:
+  neo4j:
+    image: neo4j:5.26-community
+    container_name: library-neo4j
+    ports:
+      - "7474:7474"   # Neo4j Browser (web UI): http://localhost:7474
+      - "7687:7687"   # Bolt protocol, used by the Python driver
+    environment:
+      # Password is read from .env (docker compose loads it automatically)
+      NEO4J_AUTH: neo4j/${NEO4J_PASSWORD:?Set NEO4J_PASSWORD in .env}
+      # Keep memory modest so it runs comfortably on a 16 GB laptop
+      NEO4J_server_memory_heap_initial__size: 512m
+      NEO4J_server_memory_heap_max__size: 1G
+      NEO4J_server_memory_pagecache_size: 512m
+    volumes:
+      - neo4j_data:/data
+    restart: unless-stopped
+
+volumes:
+  neo4j_data:
