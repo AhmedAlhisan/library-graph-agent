@@ -1,0 +1,642 @@
+{
+  "nodes": [
+    {
+      "label": "Genre",
+      "props": {
+        "name": "Fantasy"
+      }
+    },
+    {
+      "label": "Genre",
+      "props": {
+        "name": "Mystery"
+      }
+    },
+    {
+      "label": "Genre",
+      "props": {
+        "name": "Science Fiction"
+      }
+    },
+    {
+      "label": "Author",
+      "props": {
+        "name": "Huda Al-Fahad"
+      }
+    },
+    {
+      "label": "Author",
+      "props": {
+        "name": "Khalid Al-Otaibi"
+      }
+    },
+    {
+      "label": "Book",
+      "props": {
+        "isbn": "978-0001",
+        "title": "The Desert Star 1",
+        "year": 2019
+      }
+    },
+    {
+      "label": "Book",
+      "props": {
+        "isbn": "978-0002",
+        "title": "The Desert Star 2",
+        "year": 2021
+      }
+    },
+    {
+      "label": "Book",
+      "props": {
+        "isbn": "978-0003",
+        "title": "The Desert Star 3",
+        "year": 2024
+      }
+    },
+    {
+      "label": "Book",
+      "props": {
+        "isbn": "978-0004",
+        "title": "Riyadh Nights",
+        "year": 2022
+      }
+    },
+    {
+      "label": "Book",
+      "props": {
+        "isbn": "978-0005",
+        "title": "Code of the Dunes",
+        "year": 2023
+      }
+    },
+    {
+      "label": "Branch",
+      "props": {
+        "name": "Olaya"
+      }
+    },
+    {
+      "label": "Branch",
+      "props": {
+        "name": "Malaz"
+      }
+    },
+    {
+      "label": "Member",
+      "props": {
+        "member_id": "M001",
+        "name": "Sara"
+      }
+    },
+    {
+      "label": "Member",
+      "props": {
+        "member_id": "M002",
+        "name": "Omar"
+      }
+    },
+    {
+      "label": "Member",
+      "props": {
+        "member_id": "M003",
+        "name": "Lina"
+      }
+    },
+    {
+      "label": "Loan",
+      "props": {
+        "loan_id": "L001",
+        "status": "returned",
+        "date": "2026-08-01"
+      }
+    },
+    {
+      "label": "Loan",
+      "props": {
+        "loan_id": "L002",
+        "status": "borrowed",
+        "date": "2026-09-20"
+      }
+    },
+    {
+      "label": "Loan",
+      "props": {
+        "loan_id": "L003",
+        "status": "borrowed",
+        "date": "2026-09-25"
+      }
+    },
+    {
+      "label": "Loan",
+      "props": {
+        "loan_id": "L004",
+        "status": "overdue",
+        "date": "2026-08-15"
+      }
+    },
+    {
+      "label": "Loan",
+      "props": {
+        "loan_id": "L005",
+        "status": "returned",
+        "date": "2026-07-10"
+      }
+    },
+    {
+      "label": "Loan",
+      "props": {
+        "loan_id": "L006",
+        "status": "returned",
+        "date": "2026-06-01"
+      }
+    },
+    {
+      "label": "AvailabilityStatement",
+      "props": {
+        "statement_id": "AS001"
+      }
+    },
+    {
+      "label": "Perspective",
+      "props": {
+        "perspective_id": "P001",
+        "source": "catalog",
+        "value": 2
+      }
+    },
+    {
+      "label": "Perspective",
+      "props": {
+        "perspective_id": "P002",
+        "source": "app",
+        "value": 2
+      }
+    },
+    {
+      "label": "AvailabilityStatement",
+      "props": {
+        "statement_id": "AS002"
+      }
+    },
+    {
+      "label": "Perspective",
+      "props": {
+        "perspective_id": "P003",
+        "source": "catalog",
+        "value": 1
+      }
+    },
+    {
+      "label": "Perspective",
+      "props": {
+        "perspective_id": "P004",
+        "source": "app",
+        "value": 0
+      }
+    },
+    {
+      "label": "Magazine",
+      "props": {
+        "name": "Weekly Tech"
+      }
+    },
+    {
+      "label": "Member",
+      "props": {
+        "member_id": "M004"
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "from": [
+        "Author",
+        "Huda Al-Fahad"
+      ],
+      "type": "WROTE",
+      "to": [
+        "Book",
+        "978-0001"
+      ]
+    },
+    {
+      "from": [
+        "Book",
+        "978-0001"
+      ],
+      "type": "IN_GENRE",
+      "to": [
+        "Genre",
+        "Fantasy"
+      ]
+    },
+    {
+      "from": [
+        "Author",
+        "Huda Al-Fahad"
+      ],
+      "type": "WROTE",
+      "to": [
+        "Book",
+        "978-0002"
+      ]
+    },
+    {
+      "from": [
+        "Book",
+        "978-0002"
+      ],
+      "type": "IN_GENRE",
+      "to": [
+        "Genre",
+        "Fantasy"
+      ]
+    },
+    {
+      "from": [
+        "Author",
+        "Huda Al-Fahad"
+      ],
+      "type": "WROTE",
+      "to": [
+        "Book",
+        "978-0003"
+      ]
+    },
+    {
+      "from": [
+        "Book",
+        "978-0003"
+      ],
+      "type": "IN_GENRE",
+      "to": [
+        "Genre",
+        "Fantasy"
+      ]
+    },
+    {
+      "from": [
+        "Author",
+        "Khalid Al-Otaibi"
+      ],
+      "type": "WROTE",
+      "to": [
+        "Book",
+        "978-0004"
+      ]
+    },
+    {
+      "from": [
+        "Author",
+        "Huda Al-Fahad"
+      ],
+      "type": "WROTE",
+      "to": [
+        "Book",
+        "978-0004"
+      ]
+    },
+    {
+      "from": [
+        "Book",
+        "978-0004"
+      ],
+      "type": "IN_GENRE",
+      "to": [
+        "Genre",
+        "Mystery"
+      ]
+    },
+    {
+      "from": [
+        "Author",
+        "Khalid Al-Otaibi"
+      ],
+      "type": "WROTE",
+      "to": [
+        "Book",
+        "978-0005"
+      ]
+    },
+    {
+      "from": [
+        "Book",
+        "978-0005"
+      ],
+      "type": "IN_GENRE",
+      "to": [
+        "Genre",
+        "Science Fiction"
+      ]
+    },
+    {
+      "from": [
+        "Book",
+        "978-0002"
+      ],
+      "type": "SEQUEL_OF",
+      "to": [
+        "Book",
+        "978-0001"
+      ]
+    },
+    {
+      "from": [
+        "Book",
+        "978-0003"
+      ],
+      "type": "SEQUEL_OF",
+      "to": [
+        "Book",
+        "978-0002"
+      ]
+    },
+    {
+      "from": [
+        "Member",
+        "M001"
+      ],
+      "type": "HAS_LOAN",
+      "to": [
+        "Loan",
+        "L001"
+      ]
+    },
+    {
+      "from": [
+        "Loan",
+        "L001"
+      ],
+      "type": "FOR_BOOK",
+      "to": [
+        "Book",
+        "978-0001"
+      ]
+    },
+    {
+      "from": [
+        "Loan",
+        "L001"
+      ],
+      "type": "AT_BRANCH",
+      "to": [
+        "Branch",
+        "Olaya"
+      ]
+    },
+    {
+      "from": [
+        "Member",
+        "M001"
+      ],
+      "type": "HAS_LOAN",
+      "to": [
+        "Loan",
+        "L002"
+      ]
+    },
+    {
+      "from": [
+        "Loan",
+        "L002"
+      ],
+      "type": "FOR_BOOK",
+      "to": [
+        "Book",
+        "978-0002"
+      ]
+    },
+    {
+      "from": [
+        "Loan",
+        "L002"
+      ],
+      "type": "AT_BRANCH",
+      "to": [
+        "Branch",
+        "Olaya"
+      ]
+    },
+    {
+      "from": [
+        "Member",
+        "M002"
+      ],
+      "type": "HAS_LOAN",
+      "to": [
+        "Loan",
+        "L003"
+      ]
+    },
+    {
+      "from": [
+        "Loan",
+        "L003"
+      ],
+      "type": "FOR_BOOK",
+      "to": [
+        "Book",
+        "978-0003"
+      ]
+    },
+    {
+      "from": [
+        "Loan",
+        "L003"
+      ],
+      "type": "AT_BRANCH",
+      "to": [
+        "Branch",
+        "Malaz"
+      ]
+    },
+    {
+      "from": [
+        "Member",
+        "M003"
+      ],
+      "type": "HAS_LOAN",
+      "to": [
+        "Loan",
+        "L004"
+      ]
+    },
+    {
+      "from": [
+        "Loan",
+        "L004"
+      ],
+      "type": "FOR_BOOK",
+      "to": [
+        "Book",
+        "978-0004"
+      ]
+    },
+    {
+      "from": [
+        "Loan",
+        "L004"
+      ],
+      "type": "AT_BRANCH",
+      "to": [
+        "Branch",
+        "Malaz"
+      ]
+    },
+    {
+      "from": [
+        "Member",
+        "M002"
+      ],
+      "type": "HAS_LOAN",
+      "to": [
+        "Loan",
+        "L005"
+      ]
+    },
+    {
+      "from": [
+        "Loan",
+        "L005"
+      ],
+      "type": "FOR_BOOK",
+      "to": [
+        "Book",
+        "978-0001"
+      ]
+    },
+    {
+      "from": [
+        "Loan",
+        "L005"
+      ],
+      "type": "AT_BRANCH",
+      "to": [
+        "Branch",
+        "Malaz"
+      ]
+    },
+    {
+      "from": [
+        "Member",
+        "M003"
+      ],
+      "type": "HAS_LOAN",
+      "to": [
+        "Loan",
+        "L006"
+      ]
+    },
+    {
+      "from": [
+        "Loan",
+        "L006"
+      ],
+      "type": "FOR_BOOK",
+      "to": [
+        "Book",
+        "978-0004"
+      ]
+    },
+    {
+      "from": [
+        "Loan",
+        "L006"
+      ],
+      "type": "AT_BRANCH",
+      "to": [
+        "Branch",
+        "Olaya"
+      ]
+    },
+    {
+      "from": [
+        "AvailabilityStatement",
+        "AS001"
+      ],
+      "type": "ABOUT",
+      "to": [
+        "Book",
+        "978-0001"
+      ]
+    },
+    {
+      "from": [
+        "AvailabilityStatement",
+        "AS001"
+      ],
+      "type": "ACCORDING_TO",
+      "to": [
+        "Perspective",
+        "P001"
+      ]
+    },
+    {
+      "from": [
+        "AvailabilityStatement",
+        "AS001"
+      ],
+      "type": "ACCORDING_TO",
+      "to": [
+        "Perspective",
+        "P002"
+      ]
+    },
+    {
+      "from": [
+        "AvailabilityStatement",
+        "AS002"
+      ],
+      "type": "ABOUT",
+      "to": [
+        "Book",
+        "978-0003"
+      ]
+    },
+    {
+      "from": [
+        "AvailabilityStatement",
+        "AS002"
+      ],
+      "type": "ACCORDING_TO",
+      "to": [
+        "Perspective",
+        "P003"
+      ]
+    },
+    {
+      "from": [
+        "AvailabilityStatement",
+        "AS002"
+      ],
+      "type": "ACCORDING_TO",
+      "to": [
+        "Perspective",
+        "P004"
+      ]
+    },
+    {
+      "from": [
+        "Book",
+        "978-0001"
+      ],
+      "type": "WROTE",
+      "to": [
+        "Author",
+        "Huda Al-Fahad"
+      ]
+    },
+    {
+      "from": [
+        "Loan",
+        "L002"
+      ],
+      "type": "FOR_BOOK",
+      "to": [
+        "Book",
+        "978-9999"
+      ]
+    }
+  ]
+}
