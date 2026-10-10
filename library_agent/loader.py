@@ -9,6 +9,7 @@ Nothing reaches the graph without passing the ontology first.
 """
 
 from dataclasses import dataclass, field
+from datetime import datetime, timezone
 
 from library_agent.ontology import NODE_TYPES, validate_node, validate_relationship
 
@@ -64,6 +65,7 @@ def validate_dataset(data: dict) -> ValidationReport:
 # $parameters.
 
 def write_to_neo4j(driver, report: ValidationReport, reset: bool = False) -> None:
+    now = datetime.now(timezone.utc).isoformat(timespec="seconds")  # for the freshness metric
     with driver.session() as session:
         if reset:
             session.run("MATCH (n) DETACH DELETE n").consume()
@@ -76,14 +78,16 @@ def write_to_neo4j(driver, report: ValidationReport, reset: bool = False) -> Non
                 f"FOR (n:{label}) REQUIRE n.{key} IS UNIQUE"
             ).consume()
 
-        # Nodes: MERGE = create if missing, reuse if it already exists
+        # Nodes: MERGE = create if missing, reuse if it already exists.
+        # loaded_at records when this node was last refreshed from the source.
         for node in report.nodes:
             label, props = node["label"], node["props"]
             key = NODE_TYPES[label]["key"]
             session.run(
-                f"MERGE (n:{label} {{{key}: $key_value}}) SET n += $props",
+                f"MERGE (n:{label} {{{key}: $key_value}}) SET n += $props, n.loaded_at = $now",
                 key_value=props[key],
                 props=props,
+                now=now,
             ).consume()
 
         # Relationships: find both ends by their key, then MERGE the arrow
